@@ -37,7 +37,7 @@ class GenerateTokenView(views.APIView):
     def post(self, request, *args, **kwargs):
         phone_number = request.data.get('phone_number')
         if not phone_number:
-            return JsonResponse('Телефон должен быть заполнен', status=400)
+            return JsonResponse('Phone is required', status=400)
 
         phone_token = PhoneToken.objects.create(phone_number=phone_number, token=random.randrange(100000, 999999))
         message = Message(phone_token)

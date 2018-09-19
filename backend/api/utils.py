@@ -9,4 +9,4 @@ class Message(object):
         self.number = phone_token.phone_number
 
     def send(self, sender):
-        sender.send(self.number, 'Ваш код для входа: {0.token}'.format(self))
+        sender.send(self.number, 'Your code is: {0.token}'.format(self))
