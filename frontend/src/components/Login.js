@@ -43,8 +43,8 @@ class Login extends React.Component {
   renderButtonBlock=()=>(
     <div className="login-button">
       <button className="btn add-to-cart" onClick={this.login}>
-        { !this.props.validationCodeInput ? "Отправить" :
-          "Войти"
+        { !this.props.validationCodeInput ? "Send" :
+          "Enter"
         }</button>
     </div>
   );
@@ -53,19 +53,19 @@ class Login extends React.Component {
     <div className="row">
       <div className="col-lg-12">
         {!this.props.validationCodeInput ?
-          <span className="title">Введите номер телефона</span> :
-          <span className="title">Введите код из смс</span>}
+          <span className="title">Enter phone number</span> :
+          <span className="title">Enter code from sms</span>}
       </div>
       <div className="col-8 p-0">
         {!this.props.validationCodeInput ?
           <div className="login-phone-block">
             <InputMask {...this.props} mask="0(999)\ 99 99 99" maskChar=" " onChange={this.changeNumber}
-            placeholder={"Введите номер телефона"}/>
+            placeholder={"Enter phone number"}/>
           </div>
           :
           <div className="login-phone-block">
             <input type="text" className="form-control" onChange={this.checkValidCode} value={this.props.code}
-                   placeholder="код подтверждения"/>
+                   placeholder="Enter code"/>
             <span className="valid-code-error">{this.props.errors.validationCodeError}</span>
           </div>
         }
@@ -81,7 +81,7 @@ class Login extends React.Component {
         <div className="login-modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">Авторизация</h5>
+              <h5 className="modal-title">Auth</h5>
               <button type="button" className="close modal-close" data-dismiss="modal" aria-label="Close"
                       onClick={this.closeWindow}>
               </button>
